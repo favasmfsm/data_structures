@@ -5,7 +5,7 @@ class Node:
         self.data=data
         self.next_node=None
 
-class LinkedList:
+class Linked_List:
 
     def __init__(self):
         self.head=None
@@ -15,7 +15,7 @@ class LinkedList:
 
     def insert_start(self,data):
         
-        self.no_of_nodes+=1
+        self.no_of_nodes=self.no_of_nodes+1
         new_node=Node(data)
 
         if not self.head:
@@ -70,5 +70,14 @@ class LinkedList:
         else:
             previous_node.next_node=current_node.next_node
 
+    def get_middle_node(self):
 
+        current_node=self.head
+        fast_node=self.head
+
+        while fast_node.next_node is not None:
+            current_node=current_node.next_node
+            fast_node=fast_node.next_node.next_node
+
+        return current_node
 
